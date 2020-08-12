@@ -1,0 +1,6 @@
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Dominio\bin\Debug\Kauy.Projeto.Dominio.dll
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Dominio\bin\Debug\Kauy.Projeto.Dominio.pdb
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Dominio\obj\Debug\Kauy.Projeto.Dominio.csprojAssemblyReference.cache
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Dominio\obj\Debug\Kauy.Projeto.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Dominio\obj\Debug\Kauy.Projeto.Dominio.dll
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Dominio\obj\Debug\Kauy.Projeto.Dominio.pdb

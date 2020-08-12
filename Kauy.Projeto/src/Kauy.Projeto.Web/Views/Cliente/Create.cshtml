@@ -1,0 +1,196 @@
+﻿@model Kauy.Projeto.Web.Models.ClienteViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>ClienteViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.Tipo, 0, new { id = "idCPF" }) @Html.Label("CPF")
+                @Html.RadioButtonFor(model => model.Tipo, 1, new { id = "idCNPJ" }) @Html.Label("CNPJ")
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CPFCNPJ, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CPFCNPJ, new { htmlAttributes = new { @class = "form-control", id = "idcpfcnpj" } })
+                @Html.ValidationMessageFor(model => model.CPFCNPJ, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DDD, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DDD, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DDD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Fone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        document.getElementById('idcpfcnpj').addEventListener('blur', function (event) { this.value = validarCPFCNPJ(this.value) });
+
+        function validarCPFCNPJ(v) {
+            if (document.getElementById('idCPF').checked) {
+                let ok = validaCpf(v)
+                if (ok) {
+                    toastr["success"]('CPF Válido')
+                    return v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "\$1.\$2.\$3-\$4");
+                }
+            }
+
+            if (document.getElementById('idCNPJ').checked) {
+                let ok = validarCNPJ(v)
+                if (ok) {
+                    toastr["success"]('CNPJ Válido')
+                    return v.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g, "\$1.\$2.\$3/\$4-\$5");
+                }
+            }
+            toastr["error"]('CNPJ Inválido')
+            return ''
+        }
+
+        function validaCpf(cpf) {
+
+
+            let v1 = 0;
+            let v2 = 0;
+            let aux = false;
+
+            for (let i = 1; cpf.length > i; i++) {
+                if (cpf[i - 1] != cpf[i]) {
+                    aux = true;
+                }
+            }
+
+            if (aux == false) {
+                return false;
+            }
+
+            for (let i = 0, p = 10; (cpf.length - 2) > i; i++, p--) {
+                v1 += cpf[i] * p;
+            }
+
+            v1 = ((v1 * 10) % 11);
+
+            if (v1 == 10) {
+                v1 = 0;
+            }
+
+            if (v1 != cpf[9]) {
+                return false;
+            }
+
+            for (let i = 0, p = 11; (cpf.length - 1) > i; i++, p--) {
+                v2 += cpf[i] * p;
+            }
+
+            v2 = ((v2 * 10) % 11);
+
+            if (v2 == 10) {
+                v2 = 0;
+            }
+
+            if (v2 != cpf[10]) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function validarCNPJ(cnpj) {
+
+            cnpj = cnpj.replace(/[^\d]+/g, '');
+
+            if (cnpj == '') return false;
+
+            if (cnpj.length != 14)
+                return false;
+
+            if (cnpj == "00000000000000" ||
+                cnpj == "11111111111111" ||
+                cnpj == "22222222222222" ||
+                cnpj == "33333333333333" ||
+                cnpj == "44444444444444" ||
+                cnpj == "55555555555555" ||
+                cnpj == "66666666666666" ||
+                cnpj == "77777777777777" ||
+                cnpj == "88888888888888" ||
+                cnpj == "99999999999999")
+                return false;
+
+            tamanho = cnpj.length - 2
+            numeros = cnpj.substring(0, tamanho);
+            digitos = cnpj.substring(tamanho);
+            soma = 0;
+            pos = tamanho - 7;
+            for (i = tamanho; i >= 1; i--) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2)
+                    pos = 9;
+            }
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+            if (resultado != digitos.charAt(0))
+                return false;
+
+            tamanho = tamanho + 1;
+            numeros = cnpj.substring(0, tamanho);
+            soma = 0;
+            pos = tamanho - 7;
+            for (i = tamanho; i >= 1; i--) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2)
+                    pos = 9;
+            }
+            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+            if (resultado != digitos.charAt(1))
+                return false;
+
+            return true;
+
+        }
+
+    </script>
+}

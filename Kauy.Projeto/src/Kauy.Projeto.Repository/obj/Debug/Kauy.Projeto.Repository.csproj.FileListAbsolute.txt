@@ -1,0 +1,14 @@
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\Kauy.Projeto.Repository.dll.config
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\Kauy.Projeto.Repository.dll
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\Kauy.Projeto.Repository.pdb
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\EntityFramework.dll
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\Kauy.Projeto.Dominio.dll
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\Kauy.Projeto.Dominio.pdb
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\EntityFramework.xml
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\obj\Debug\Kauy.Projeto.Repository.csprojAssemblyReference.cache
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\obj\Debug\Kauy.Projeto.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\obj\Debug\Kauy.Projeto.Repository.csproj.CopyComplete
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\obj\Debug\Kauy.Projeto.Repository.dll
+C:\Users\Luiz\Desktop\Desafio\Kauy.Projeto\src\Kauy.Projeto.Repository\obj\Debug\Kauy.Projeto.Repository.pdb
